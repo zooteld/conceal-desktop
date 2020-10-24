@@ -1,0 +1,19 @@
+# This file is an example of how to add W2W Desktop in Applications list.
+# Edit this file and copy it to ~/.local/share/applications
+# Once copied you will be able to find W2W Desktop in Applications list.
+# If you are not able to find W2W Desktop check that Exec and Icon are correct.
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=W2W Desktop
+Comment=W2W Desktop
+# Change the Exec value to match W2W-GUI path
+# example : Exec=/home/w2w/apps/w2w/W2W-GUI
+Exec=<change-this-value>
+Terminal=false
+Type=Application
+# Change the Icon value to match W2W icon path
+# example : Icon=/home/w2w/apps/w2w/icon/w2w.png
+Icon=icon/w2w.png
+MimeType=x-scheme-handler/w2wwallet;
+Categories=Office;Finance;Cryptocurrency;

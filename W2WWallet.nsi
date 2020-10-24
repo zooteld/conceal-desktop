@@ -4,13 +4,13 @@
 #              by Vlasis K. Barkas aka Red Wine red_wine@freemail.gr Sep 2006               
 ############################################################################################
 
-!define APP_NAME "Conceal Wallet"
-!define COMP_NAME "Conceal Network"
-!define WEB_SITE "https://conceal.network"
-!define VERSION "06.01.02.00"
-!define COPYRIGHT "Conceal Network 2019"
-!define DESCRIPTION "Conceal Wallet"
-!define MAIN_APP_EXE "CONCEAL-GUI.exe"
+!define APP_NAME "W2W Wallet"
+!define COMP_NAME "W2W Coin"
+!define WEB_SITE "https://w2wcoin.org"
+!define VERSION "01.0"
+!define COPYRIGHT "The W2W Team 2020"
+!define DESCRIPTION "W2W Wallet"
+!define MAIN_APP_EXE "W2W-GUI.exe"
 !define INSTALL_TYPE "SetShellVarContext all"
 !define REG_ROOT "HKLM"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
@@ -34,11 +34,11 @@ VIAddVersionKey "FileVersion"  "${VERSION}"
 SetCompressor ZLIB
 Name "${APP_NAME}"
 Caption "${APP_NAME}"
-OutFile ".\build\Release\Conceal-Setup.exe"
+OutFile ".\build\Release\W2W-Setup.exe"
 BrandingText "${APP_NAME}"
 XPStyle on
 InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""
-InstallDir "$PROGRAMFILES\Conceal Wallet"
+InstallDir "$PROGRAMFILES\W2W Wallet"
 
 ######################################################################
 
@@ -47,15 +47,15 @@ InstallDir "$PROGRAMFILES\Conceal Wallet"
 !define MUI_ABORTWARNING
 !define MUI_UNABORTWARNING
 
-!define MUI_ICON "src\images\appicon\conceal.ico"
-!define MUI_UNICON "src\images\appicon\conceal.ico"
+!define MUI_ICON "src\images\appicon\w2w.ico"
+!define MUI_UNICON "src\images\appicon\w2w.ico"
 
-!define MUI_WELCOMEFINISHPAGE_BITMAP "src\images\installer\conceal-welcome.bmp"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "src\images\installer\conceal-welcome.bmp"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "src\images\installer\w2w-welcome.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "src\images\installer\w2w-welcome.bmp"
 
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "src\images\installer\conceal-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "src\images\installer\w2w-header.bmp"
 
 !insertmacro MUI_PAGE_WELCOME
 
@@ -66,7 +66,7 @@ InstallDir "$PROGRAMFILES\Conceal Wallet"
 !insertmacro MUI_PAGE_DIRECTORY
 
 !ifdef REG_START_MENU
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Conceal Wallet"
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "W2W Wallet"
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT "${REG_ROOT}"
 !define MUI_STARTMENUPAGE_REGISTRY_KEY "${UNINSTALL_PATH}"
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "${REG_START_MENU}"
@@ -92,7 +92,7 @@ ${INSTALL_TYPE}
 SetOverwrite ifnewer
 SetOutPath "$INSTDIR"
 File /r ".\build\Release\Final\*"
-File /r ".\build\Release\CONCEAL-GUI.exe"
+File /r ".\build\Release\W2W-GUI.exe"
 SectionEnd
 
 ######################################################################
@@ -116,14 +116,14 @@ CreateShortCut "$SMPROGRAMS\$SM_Folder\${APP_NAME} Website.lnk" "$INSTDIR\${APP_
 !endif
 
 !ifndef REG_START_MENU
-CreateDirectory "$SMPROGRAMS\Conceal Wallet"
-CreateShortCut "$SMPROGRAMS\Conceal Wallet\${APP_NAME}.lnk" "$INSTDIR\${MAIN_APP_EXE}"
+CreateDirectory "$SMPROGRAMS\W2W Wallet"
+CreateShortCut "$SMPROGRAMS\W2W Wallet\${APP_NAME}.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 CreateShortCut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\${MAIN_APP_EXE}"
-CreateShortCut "$SMPROGRAMS\Conceal Wallet\Uninstall ${APP_NAME}.lnk" "$INSTDIR\uninstall.exe"
+CreateShortCut "$SMPROGRAMS\W2W Wallet\Uninstall ${APP_NAME}.lnk" "$INSTDIR\uninstall.exe"
 
 !ifdef WEB_SITE
 WriteIniStr "$INSTDIR\${APP_NAME} website.url" "InternetShortcut" "URL" "${WEB_SITE}"
-CreateShortCut "$SMPROGRAMS\Conceal Wallet\${APP_NAME} Website.lnk" "$INSTDIR\${APP_NAME} website.url"
+CreateShortCut "$SMPROGRAMS\W2W Wallet\${APP_NAME} Website.lnk" "$INSTDIR\${APP_NAME} website.url"
 !endif
 !endif
 
@@ -143,7 +143,7 @@ SectionEnd
 
 Section Uninstall
 ${INSTALL_TYPE}
-Delete "$INSTDIR\CONCEAL-GUI.exe"
+Delete "$INSTDIR\W2W-GUI.exe"
 Delete "$INSTDIR\Qt5Core.dll"
 Delete "$INSTDIR\Qt5Gui.dll"
 Delete "$INSTDIR\Qt5Network.dll"
@@ -172,14 +172,14 @@ RmDir "$SMPROGRAMS\$SM_Folder"
 !endif
 
 !ifndef REG_START_MENU
-Delete "$SMPROGRAMS\Conceal Wallet\${APP_NAME}.lnk"
-Delete "$SMPROGRAMS\Conceal Wallet\Uninstall ${APP_NAME}.lnk"
+Delete "$SMPROGRAMS\W2W Wallet\${APP_NAME}.lnk"
+Delete "$SMPROGRAMS\W2W Wallet\Uninstall ${APP_NAME}.lnk"
 !ifdef WEB_SITE
-Delete "$SMPROGRAMS\Conceal Wallet\${APP_NAME} Website.lnk"
+Delete "$SMPROGRAMS\W2W Wallet\${APP_NAME} Website.lnk"
 !endif
 Delete "$DESKTOP\${APP_NAME}.lnk"
 
-RmDir "$SMPROGRAMS\Conceal Wallet"
+RmDir "$SMPROGRAMS\W2W Wallet"
 !endif
 
 DeleteRegKey ${REG_ROOT} "${REG_APP_PATH}"

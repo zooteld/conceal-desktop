@@ -195,7 +195,7 @@ if (WIN32)
 
   set(PLATFORM_DIR Windows)
   set(BUILD_PLATFORM WIN32)
-  set(BUILD_RESOURCES conceal.rc)
+  set(BUILD_RESOURCES w2w.rc)
   set(QTMAIN Qt5::WinMain)
 
 elseif (UNIX)
@@ -219,8 +219,8 @@ elseif (UNIX)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 ${ARCH_FLAG} -maes -D_DARWIN_C_SOURCE")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib")
 
-    set(MACOSX_BUNDLE_ICON_FILE conceal.icns)
-    set(APPLICATION_ICON src/images/appicon/conceal.icns)
+    set(MACOSX_BUNDLE_ICON_FILE w2w.icns)
+    set(APPLICATION_ICON src/images/appicon/w2w.icns)
     set_source_files_properties(${APPLICATION_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
 
     set(BUILD_PLATFORM MACOSX_BUNDLE)
@@ -271,8 +271,8 @@ target_link_libraries(${PROJECT_NAME} Qt5::Network)
 
 set(CPACK_PACKAGE_NAME ${CN_PROJECT_NAME})
 set(CPACK_PACKAGE_VERSION ${CN_VERSION})
-set(CPACK_PACKAGE_VENDOR "The Circle Foundation")
-set(CPACK_PACKAGE_CONTACT "https://github.com/TheCircleFoundation/")
+set(CPACK_PACKAGE_VENDOR "The W2W Team")
+set(CPACK_PACKAGE_CONTACT "https://github.com/w2w-coin")
 set(CPACK_STRIP_FILES ON)
 if (APPLE)
     set(CPACK_GENERATOR DragNDrop)
@@ -280,13 +280,13 @@ if (APPLE)
     set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}.-${VERSION_RELEASE}")
 elseif (UNIX)
     install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
-    install(FILES src/concealwallet.desktop DESTINATION share/applications)
-    install(FILES src/images/conceal.png DESTINATION share/pixmaps)
-    install(FILES COPYRIGHT DESTINATION share/doc/concealwallet)
+    install(FILES src/w2wwallet.desktop DESTINATION share/applications)
+    install(FILES src/images/w2w.png DESTINATION share/pixmaps)
+    install(FILES COPYRIGHT DESTINATION share/doc/w2wwallet)
 
 	SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 	SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
-	SET(CPACK_PACKAGE_ICON src/images/conceal.png)
+	SET(CPACK_PACKAGE_ICON src/images/w2w.png)
 	
     if (NOT PACKRPM)
         set(CPACK_GENERATOR DEB)
@@ -295,18 +295,18 @@ elseif (UNIX)
         set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${CPACK_PACKAGE_VENDOR} <krypt0x@gmx.com>")
         set(CPACK_DEBIAN_PACKAGE_SECTION Office)
         set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Conceal GUI Wallet
- Conceal is a decentrilized privacy protected peer-to-peer
- cryptocurrency and untraceable encrypted messaging system. Conceal is
- open-source; its design is public, nobody owns or controls Conceal and
+        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "W2W GUI Wallet
+ W2W is a decentrilized privacy protected peer-to-peer
+ cryptocurrency and untraceable encrypted messaging system. W2W is
+ open-source; its design is public, nobody owns or controls W2W and
  everyone can take part.
  .
- Features of the Conceal wallet listed bellow:
+ Features of the W2W wallet listed bellow:
  * Classic Bitcoin alike appearance in CryptoNote based cryptocurrency,
    made with QT and open-source.
- * Instant anonymous CCX transfers and transfers notifications
+ * Instant anonymous W2W transfers and transfers notifications
  * Instant untraceable encrypted messages transfers and notifications
- * Safe and secure, full Conceal network node in wallet, fast network
+ * Safe and secure, full W2W network node in wallet, fast network
    syncronization.
  * Wallet encryption
  * Fast and hardware optimized
@@ -319,19 +319,19 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
         set(CPACK_RPM_PACKAGE_LICENSE "GPL3")
         set(CPACK_RPM_PACKAGE_GROUP Office)
         set(CPACK_RPM_PACKAGE_REQUIRES "qt5-qtbase >= 5.3.2, qt5-qtbase-gui >= 5.3.2")
-        set(CPACK_RPM_PACKAGE_SUMMARY "Conceal GUI Wallet")
-        set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source Conceal GUI wallet
- Conceal is a decentrilized privacy protected peer-to-peer
- cryptocurrency and untraceable encrypted messaging system. Conceal is
- open-source; its design is public, nobody owns or controls Conceal and
+        set(CPACK_RPM_PACKAGE_SUMMARY "W2W GUI Wallet")
+        set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source W2W GUI wallet
+ W2W is a decentrilized privacy protected peer-to-peer
+ cryptocurrency and untraceable encrypted messaging system. W2W is
+ open-source; its design is public, nobody owns or controls W2W and
  everyone can take part.
 
- Features of the Conceal wallet listed bellow:
+ Features of the W2W wallet listed bellow:
  *Classic Bitcoin alike appearance in CryptoNote based cryptocurrency,
     made with QT and open-source.
- *Instant anonymous Conceal transfers and transfers notifications
+ *Instant anonymous W2W transfers and transfers notifications
  *Instant untraceable encrypted messages transfers and notifications
- *Safe and secure, full Conceal network node in wallet, fast network
+ *Safe and secure, full W2W network node in wallet, fast network
     syncronization.
  *Wallet encryption
  *Fast and hardware optimized
