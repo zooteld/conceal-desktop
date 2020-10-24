@@ -1,36 +1,32 @@
-![image](https://github.com/ConcealNetwork/conceal-assets/blob/master/splash.png)
+![image](https://github.com/w2w/w2w-resource/w2w-splash.png)
 
-# Conceal Desktop (GUI Wallet)
+# W2W Desktop (GUI Wallet)
 Latest Release: v6.3.1
 
-Maintained by Conceal Devs.
+Maintained by The W2W Team..
 
 ## Information
-Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code.
+W2W is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code.
 
-Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous, a key concern in a post Snowden world. Hackers cannot trace money or messages when the messages are sent across public networks.
+W2W enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous, a key concern in a post Snowden world. Hackers cannot trace money or messages when the messages are sent across public networks.
 
-Conceal Cryptocurrency (₡CCX) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
+W2W Cryptocurrency (₡CCX) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
 
-Conceal is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your CCX transactions and messages are anonymous. Conceal avoids many concerns, e.g. technological, environment impact, reputational and security, of Bitcoin, and provides a glimpse of the future.
+W2W is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your CCX transactions and messages are anonymous. W2W avoids many concerns, e.g. technological, environment impact, reputational and security, of Bitcoin, and provides a glimpse of the future.
 
-Conceal is open-source, community driven and truly decentralized.
+W2W is open-source, community driven and truly decentralized.
 
-No one owns Conceal, everyone can take part.
+No one owns W2W, everyone can take part.
 
 ## Resources
-- Web: [conceal.network](https://conceal.network/)
-- GitHub: [https://github.com/ConcealNetwork/conceal-core](https://github.com/ConcealNetwork/conceal-core)
-- Discord: [https://discord.gg/YbpHVSd](https://discord.gg/YbpHVSd)
-- Twitter: [https://twitter.com/ConcealNetwork](https://twitter.com/ConcealNetwork)
-- Telegram Official (News Feed): [https://t.me/concealnetwork](https://t.me/concealnetwork)
-- Telegram User Group (Chat Group): [https://t.me/concealnetworkusers](https://t.me/concealnetworkusers)
-- Medium: [https://medium.com/@ConcealNetwork](https://medium.com/@ConcealNetwork)
-- Reddit: [https://www.reddit.com/r/ConcealNetwork/](https://www.reddit.com/r/ConcealNetwork/)
-- Bitcoin Talk: [https://bitcointalk.org/index.php?topic=4515873](https://bitcointalk.org/index.php?topic=4515873)
-- Paperwallet: [https://conceal.network/paperwallet](https://conceal.network/paperwallet)
+- Web: [W2W](https://w2wcoin.org)
+- GitHub: [https://github.com/w2w-coin](https://github.com/w2w-coin)
+- Discord: [Coming Soon](Coming Soon)
+- Twitter: [Coming Soon](Coming Soon)
+- Telegram User Group (Chat Group): [Coming Soon](Coming Soon)
+- Paperwallet: [Coming Soon](Coming Soon)
 
-## Compiling Conceal from source
+## Compiling W2W from source
 
 ### Linux / Ubuntu
 
@@ -51,11 +47,11 @@ Alternatively, it may be possible to install them using a package manager.
 To acquire the source via git and build the release version, run the following commands:
 
 - `cd ~`
-- `git clone https://github.com/ConcealNetwork/conceal-desktop`
-- `cd conceal-desktop`
-- `git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote`
+- `git clone https://github.com/w2w-coin/w2wgui.git`
+- `cd w2w-desktop`
+- `git clone https://github.com/w2w-coin/W2W.git cryptonote`
 - `make build-release`
-- `mkdir bin && mv build/release/CONCEAL-GUI bin/`
+- `mkdir bin && mv build/release/W2W-GUI bin/`
 - `make clean`
 
 If the build is successful the binaries will be in the bin folder.
@@ -74,14 +70,14 @@ If the build is successful the binaries will be in the bin folder.
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
 - Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
-- `git clone https://github.com/ConcealNetwork/conceal-core`
-- `git clone https://github.com/ConcealNetwork/conceal-desktop`
-- Copy the contents of the conceal-core folder into conceal-wallet\cryptonote
-- `cd conceal-desktop`
+- `git clone https://github.com/w2w-coin/W2W.git`
+- `git clone https://github.com/w2w-coin/w2wgui.git`
+- Copy the contents of the w2w folder into w2wgui\cryptonote
+- `cd w2wgui`
 - `mkdir build`
 - `cd build`
 - `cmake -G "Visual Studio 15 2017 Win64" -DBOOST_LIBRARYDIR:PATH=c:/local/boost_1_67_0 ..` (Or your boost installed dir.)
-- `msbuild CONCEAL-GUI.sln /p:Configuration=Release`
+- `msbuild W2W-GUI.sln /p:Configuration=Release`
 
 If the build is successful the binaries will be in the Release folder.
 
