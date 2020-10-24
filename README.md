@@ -10,9 +10,9 @@ W2W is a decentralized blockchain bank, with deposits and investments paying int
 
 W2W enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous, a key concern in a post Snowden world. Hackers cannot trace money or messages when the messages are sent across public networks.
 
-W2W Cryptocurrency (₡CCX) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
+W2W Cryptocurrency (W2W) is based on the Cryptonote protocol and runs on a secure peer-to-peer network technology to operate with no central authority. You control the private keys to your funds.
 
-W2W is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your CCX transactions and messages are anonymous. W2W avoids many concerns, e.g. technological, environment impact, reputational and security, of Bitcoin, and provides a glimpse of the future.
+W2W is accessible by anyone in the world regardless of their geographic location or status. Our blockchain is resistant to any kind of analysis. All your W2W transactions and messages are anonymous. W2W avoids many concerns, e.g. technological, environment impact, reputational and security, of Bitcoin, and provides a glimpse of the future.
 
 W2W is open-source, community driven and truly decentralized.
 

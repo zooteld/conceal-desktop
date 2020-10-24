@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Conceal Desktop
-Comment=Conceal Desktop
-Exec=CONCEAL-GUI
+Name=W2WGui
+Comment=W2WGui
+Exec=W2W-GUI
 Terminal=false
 Type=Application
-Icon=conceal.png
-MimeType=x-scheme-handler/concealwallet;
+Icon=w2w.png
+MimeType=x-scheme-handler/w2wwallet;
 Categories=Office;Finance;Cryptocurrency;

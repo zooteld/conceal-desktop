@@ -19,7 +19,7 @@ ExitWidget::ExitWidget(QWidget* _parent)
     : QWidget(_parent, Qt::Window), m_ui(new Ui::ExitWidget), m_clockMovie(new QMovie(this))
 {
   m_ui->setupUi(this);
-  setWindowIcon(QIcon(":/images/conceal-logo"));
+  setWindowIcon(QIcon(":/images/w2w-logo"));
   QString text = m_ui->m_label->text();
   m_ui->m_label->setText(text.arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
   m_clockMovie->setFileName(":/images/clock");
