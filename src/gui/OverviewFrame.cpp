@@ -657,34 +657,34 @@ namespace WalletGui
     int width = size.width();
     int height = size.height();
 
-    link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
+    link = "http://walletapi.w2wcoin.org/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
 
     /** 1280 x 720 or smaller is the default */
     if (width < 1363) {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
+      link = "http://walletapi.w2wcoin.org/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
     }
     
     /** 1365 x 768 */
     if ((width == 1363) && (height == 750) ){
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
+      link = "http://walletapi.w2wcoin.org/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
     }
 
     /** 1440 x 900 */
     if ((width == 1438) && (height == 868))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=695&height=416&dateFormat=MM-DD";
+      link = "http://walletapi.w2wcoin.org/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=695&height=416&dateFormat=MM-DD";
     }
 
     /** 1680 x 1050 */
     if ((width == 1678) && (height == 1008))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=14&priceDecimals=2&xPoints=12&width=927&height=555&dateFormat=MM-DD";
+      link = "http://walletapi.w2wcoin.org/services/charts/price.png?vsCurrency=" + currency + "&days=14&priceDecimals=2&xPoints=12&width=927&height=555&dateFormat=MM-DD";
     }
 
     /** This should cover 1920 and above */
     if (width > 1599)
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
+      link = "http://walletapi.w2wcoin.org/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
     }
     url = QUrl::fromUserInput(link);
 
@@ -740,7 +740,7 @@ namespace WalletGui
   void OverviewFrame::actualBalanceUpdated(quint64 _balance)
   {
     m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));                   // Overview screen
-    m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX"); // Send funds screen
+    m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance) + " W2W"); // Send funds screen
     m_actualBalance = _balance;
     quint64 actualBalance = WalletAdapter::instance().getActualBalance();
     quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -863,18 +863,18 @@ namespace WalletGui
     QString changeCurrency = selectedCurrency + "_24h_change";
 
     double currency = result[selectedCurrency].toDouble();
-    ccxfiat = (float)currency;
-    QString ccx = QLocale(QLocale::system()).toString(currency, 'f', 2);
+    w2wfiat = (float)currency;
+    QString w2w = QLocale(QLocale::system()).toString(currency, 'f', 2);
     double market_cap = result[marketCapCurrency].toDouble();
-    QString ccx_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
+    QString w2w_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
     double c24h_volume = result[volumeCurrency].toDouble();
-    QString ccx_24h_volume = QLocale(QLocale::system()).toString(c24h_volume, 'f', 2);
+    QString w2w_24h_volume = QLocale(QLocale::system()).toString(c24h_volume, 'f', 2);
     double c24h_change = result[changeCurrency].toDouble();
-    QString ccx_24h_change = QLocale(QLocale::system()).toString(c24h_change, 'f', 2);
-    m_ui->m_ccx->setText(ccx + " " + currentCurrency);
-    m_ui->m_24hChange->setText(ccx_24h_change + "%");
-    m_ui->m_marketCap->setText(ccx_market_cap + " " + currentCurrency);
-    m_ui->m_volume->setText(ccx_24h_volume + " " + currentCurrency);
+    QString w2w_24h_change = QLocale(QLocale::system()).toString(c24h_change, 'f', 2);
+    m_ui->m_w2w->setText(w2w + " " + currentCurrency);
+    m_ui->m_24hChange->setText(w2w_24h_change + "%");
+    m_ui->m_marketCap->setText(w2w_market_cap + " " + currentCurrency);
+    m_ui->m_volume->setText(w2w_24h_volume + " " + currentCurrency);
 
     updatePortfolio();
   }
@@ -885,14 +885,14 @@ namespace WalletGui
     exchangeName = _exchange;
   }
 
-  /* Update the total portfolio in CCX and Fiat on the top left hand corner */
+  /* Update the total portfolio in W2W and Fiat on the top left hand corner */
   void OverviewFrame::updatePortfolio()
   {
     QString currentCurrency = Settings::instance().getCurrentCurrency();
 
     float total = 0;
-    total = ccxfiat * (float)OverviewFrame::totalBalance;
-    m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
+    total = w2wfiat * (float)OverviewFrame::totalBalance;
+    m_ui->w2wTotal->setText(CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " W2W ");
     m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
     m_ui->fiatLabel->setText("Portfolio (" + Settings::instance().getCurrentCurrency() + ")");
   }
@@ -909,7 +909,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText(tr("BANKING"));
+      m_ui->m_myW2WWalletTitle->setText(tr("BANKING"));
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-banking"));
       m_ui->bankingBox->raise();
     }
@@ -922,7 +922,7 @@ namespace WalletGui
   void OverviewFrame::transactionHistoryClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText(tr("TRANSACTIONS"));
+    m_ui->m_myW2WWalletTitle->setText(tr("TRANSACTIONS"));
     m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-transactions"));
     m_ui->transactionsBox->raise();
   }
@@ -930,7 +930,7 @@ namespace WalletGui
   void OverviewFrame::dashboardClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText(tr("CONCEAL.NETWORK"));
+    m_ui->m_myW2WWalletTitle->setText(tr("w2wcoin.org"));
     m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-home"));
     m_ui->overviewBox->raise();
     m_ui->lm_newTransferButton->show();
@@ -940,7 +940,7 @@ namespace WalletGui
   void OverviewFrame::aboutClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText(tr("ABOUT"));
+    m_ui->m_myW2WWalletTitle->setText(tr("ABOUT"));
     m_ui->m_titleIcon->setText("?");
     m_ui->aboutBox->raise();
     m_ui->lm_newTransferButton->show();
@@ -950,7 +950,7 @@ namespace WalletGui
   void OverviewFrame::settingsClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText(tr("WALLET SETTINGS"));
+    m_ui->m_myW2WWalletTitle->setText(tr("WALLET SETTINGS"));
     m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/settings").scaled(36, 36));
     m_ui->settingsBox->raise();
   }
@@ -963,7 +963,7 @@ namespace WalletGui
   void OverviewFrame::inboxClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText(tr("INBOX"));
+    m_ui->m_myW2WWalletTitle->setText(tr("INBOX"));
     m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-messages"));
     m_ui->messageBox->raise();
   }
@@ -988,7 +988,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
+      m_ui->m_myW2WWalletTitle->setText(tr("SEND FUNDS"));
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
@@ -1029,7 +1029,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText(tr("NEW MESSAGE"));
+      m_ui->m_myW2WWalletTitle->setText(tr("NEW MESSAGE"));
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
       OverviewFrame::fromPay = false;
@@ -1114,14 +1114,14 @@ namespace WalletGui
     if (OverviewFrame::fromPay == true)
     {
       m_ui->m_addressEdit->setText(_address);
-      m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
+      m_ui->m_myW2WWalletTitle->setText(tr("SEND FUNDS"));
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
     }
     else
     {
       m_ui->m_addressMessageEdit->setText(_address);
-      m_ui->m_myConcealWalletTitle->setText(tr("SEND MESSAGE"));
+      m_ui->m_myW2WWalletTitle->setText(tr("SEND MESSAGE"));
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
     }
@@ -1142,9 +1142,9 @@ namespace WalletGui
     {
       OverviewFrame::remote_node_fee_address = _address;
       Settings::instance().setCurrentFeeAddress(_address);
-      m_ui->m_sendFee->setText("Fee: 0.011000 CCX");
-      m_ui->m_messageFee->setText("Fee: 0.011000 CCX");
-      m_ui->m_depositFeeLabel->setText("0.011000 CCX");
+      m_ui->m_sendFee->setText("Fee: 0.011000 W2W");
+      m_ui->m_messageFee->setText("Fee: 0.011000 W2W");
+      m_ui->m_depositFeeLabel->setText("0.011000 W2W");
     }
   }
 
@@ -1237,14 +1237,14 @@ namespace WalletGui
 
     try
     {
-      /* Is it a Conceal ID? */
+      /* Is it a W2W ID? */
       if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
       {
-        /* Parse the record and set address to the actual CCX address */
+        /* Parse the record and set address to the actual W2W address */
         std::vector<std::string> records;
         if (!Common::fetch_dns_txt(address.toStdString(), records))
         {
-          QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
+          QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup W2W ID"), QtCriticalMsg));
         }
         std::string realAddress;
         for (const auto &record : records)
@@ -1260,7 +1260,7 @@ namespace WalletGui
 
     catch (std::exception &)
     {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check W2W ID"), QtCriticalMsg));
       return;
     }
 
@@ -1383,7 +1383,7 @@ namespace WalletGui
   /* Open address book */
   void OverviewFrame::addressBookClicked()
   {
-    m_ui->m_myConcealWalletTitle->setText(tr("ADDRESS BOOK"));
+    m_ui->m_myW2WWalletTitle->setText(tr("ADDRESS BOOK"));
     m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-address"));
     m_ui->addressBookBox->raise();
   }
@@ -1486,14 +1486,14 @@ namespace WalletGui
 
     try
     {
-      /* Is it a Conceal ID? */
+      /* Is it a W2W ID? */
       if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
       {
-        /* Parse the record and set address to the actual CCX address */
+        /* Parse the record and set address to the actual W2W address */
         std::vector<std::string> records;
         if (!Common::fetch_dns_txt(address.toStdString(), records))
         {
-          QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
+          QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup W2W ID"), QtCriticalMsg));
         }
         std::string realAddress;
         for (const auto &record : records)
@@ -1509,7 +1509,7 @@ namespace WalletGui
 
     catch (std::exception &)
     {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check W2W ID"), QtCriticalMsg));
       return;
     }
 
@@ -2069,57 +2069,57 @@ namespace WalletGui
 
   void OverviewFrame::discordClicked()
   {
-    QDesktopServices::openUrl(QUrl("http://discord.conceal.network/", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::twitterClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://twitter.com/ConcealNetwork", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::telegramClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://t.co/55klBHKGUR", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::githubClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://github.com/ConcealNetwork", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://github.com/w2w-coin", QUrl::TolerantMode));
   }
 
   void OverviewFrame::redditClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.reddit.com/r/ConcealNetwork/", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::mediumClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://medium.com/@ConcealNetwork", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::hotbitClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.hotbit.io/exchange?symbol=CCX_BTC", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::stexClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://app.stex.com/en/basic-trade/pair/BTC/CCX", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::tradeogreClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/BTC-CCX", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::qtradeClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://qtrade.io/market/CCX_BTC", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("Coming Soon", QUrl::TolerantMode));
   }
 
   void OverviewFrame::helpClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://conceal.network/wiki/doku.php?id=start", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://github.com/w2w-coin/w2wgui/README.md", QUrl::TolerantMode));
   }
 
   /* Initiate a password prompt meant for critical tasks like sending funds etc */

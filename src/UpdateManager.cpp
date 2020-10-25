@@ -72,7 +72,7 @@ void Updater::checkForUpdate()
 {
   QNetworkAccessManager* nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &Updater::replyFinished);
-  const QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/version.txt");
+  const QUrl url = QUrl::fromUserInput("http://walletapi.w2wcoin.org/version.txt");
   QNetworkRequest request(url);
   nam->get(request);
 }
@@ -96,12 +96,12 @@ void Updater::replyFinished(QNetworkReply* reply)
     if (ourVersion < remoteVersion)
     {
       if (QMessageBox::warning(
-              &MainWindow::instance(), QObject::tr("Conceal Wallet Update"),
+              &MainWindow::instance(), QObject::tr("W2W GUI Wallet Update"),
               QObject::tr("There is an update to the wallet available.\nWould you like to go to "
                           "the download page?"),
               QMessageBox::Ok, QMessageBox::Cancel) == QMessageBox::Ok)
       {
-        QString link = "https://github.com/ConcealNetwork/conceal-desktop/releases";
+        QString link = "https://github.com/w2w-coin/w2wgui/releases";
         QDesktopServices::openUrl(QUrl(link));
       }
     }

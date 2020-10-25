@@ -209,8 +209,8 @@ bool CurrencyAdapter::processServerAliasResponse(const std::string& s, std::stri
 	try {
 		//   
 		// Courtesy of Monero Project
-			  // make sure the txt record has "oa1:ccx" and find it
-		auto pos = s.find("oa1:ccx");
+			  // make sure the txt record has "oa1:w2w" and find it
+		auto pos = s.find("oa1:w2w");
 		if (pos == std::string::npos)
 			return false;
 		// search from there to find "recipient_address="

@@ -39,7 +39,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../resources.qrc">
-    <normaloff>:/images/conceal-logo</normaloff>:/images/conceal-logo</iconset>
+    <normaloff>:/images/w2w-logo</normaloff>:/images/w2w-logo</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #282d31;

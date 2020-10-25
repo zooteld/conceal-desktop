@@ -27,7 +27,7 @@ namespace WalletGui
 
   void PriceProvider::getPrice()
   {
-    QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/services/market/info?vsCurrencies=usd,eur,gbp,rub,try,cny,aud,nzd,sgd,lkr,vnd,isk,inr,idr,isk,hkd,pab,zar,krw,brl,byn,vef,mur,irr,sar,aed,pkr,egp,ils,nok,lsl,uah,ron,kzt,myr,ron,mxn");
+    QUrl url = QUrl::fromUserInput("http://walletapi.w2wcoin.org/services/market/info?vsCurrencies=usd,eur,gbp,rub,try,cny,aud,nzd,sgd,lkr,vnd,isk,inr,idr,isk,hkd,pab,zar,krw,brl,byn,vef,mur,irr,sar,aed,pkr,egp,ils,nok,lsl,uah,ron,kzt,myr,ron,mxn");
 
     QNetworkRequest request(url);
     QNetworkReply *reply = m_networkManager.get(request);
@@ -47,7 +47,7 @@ namespace WalletGui
 
     QJsonObject jsonObject = doc.object();
     QJsonObject result;
-    result = jsonObject["conceal"].toObject();
+    result = jsonObject["w2w"].toObject();
     Q_EMIT priceFoundSignal(result);
   }
 

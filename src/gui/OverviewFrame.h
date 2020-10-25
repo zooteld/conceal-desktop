@@ -65,7 +65,7 @@ private:
   ExchangeProvider *m_exchangeProvider;
   QString remote_node_fee_address;
   quint64 totalBalance = 0;
-  float ccxfiat = 0;
+  float w2wfiat = 0;
   QString wallet_address;
   quint64 remote_node_fee;
   quint64 m_actualBalance = 0;

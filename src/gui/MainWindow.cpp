@@ -144,7 +144,7 @@ void MainWindow::initUi()
     QAction* showAction = new QAction(tr("Show"), this);
     connect(showAction, &QAction::triggered, this, &MainWindow::restoreFromTray);
 
-    QAction* quitAction = new QAction(tr("Quit Conceal Desktop"), this);
+    QAction* quitAction = new QAction(tr("Quit W2WGui"), this);
     connect(quitAction, &QAction::triggered, qApp, &QCoreApplication::quit);
 
     QMenu* trayIconMenu = new QMenu(this);
@@ -153,7 +153,7 @@ void MainWindow::initUi()
     trayIconMenu->addAction(quitAction);
 
     m_trayIcon = new QSystemTrayIcon(this);
-    m_trayIcon->setIcon(QPixmap(":/images/conceal-logo"));
+    m_trayIcon->setIcon(QPixmap(":/images/w2w-logo"));
     m_trayIcon->setContextMenu(trayIconMenu);
 #ifndef Q_OS_MAC
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayActivated);

@@ -431,7 +431,7 @@ border:none;</string>
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../resources.qrc">:/images/conceal-logo</pixmap>
+            <pixmap resource="../../resources.qrc">:/images/w2w-logo</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -1011,7 +1011,7 @@ background-color: #333;
 border: none;</string>
            </property>
            <property name="text">
-            <string notr="true">Network Fee: 0.001000 CCX</string>
+            <string notr="true">Network Fee: 0.001000 W2W</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1354,7 +1354,7 @@ padding-left: 5px</string>
 border: none;</string>
            </property>
            <property name="text">
-            <string notr="true">Available Balance: 0.000000 CCX</string>
+            <string notr="true">Available Balance: 0.000000 W2W</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1638,7 +1638,7 @@ padding-left: 5px</string>
     </string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W2W is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;W2W is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2019-2020 - The W2W Team&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="textFormat">
                 <enum>Qt::RichText</enum>
@@ -1704,7 +1704,7 @@ padding: 15px;
 border-radius: 5px;</string>
               </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT W2W&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W2W is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. W2W enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://w2wcoin.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://w2wcoin.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="textFormat">
                <enum>Qt::RichText</enum>
@@ -2071,7 +2071,7 @@ padding-left: 5px</string>
 border: none;</string>
            </property>
            <property name="text">
-            <string notr="true">Fee: 0.001000 CCX</string>
+            <string notr="true">Fee: 0.001000 W2W</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2556,7 +2556,7 @@ border: none;</string>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLabel" name="m_ccx">
+             <widget class="QLabel" name="m_w2w">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -2898,7 +2898,7 @@ text-align: left;
            </layout>
            <zorder>m_volume</zorder>
            <zorder>m_marketCap</zorder>
-           <zorder>m_ccx</zorder>
+           <zorder>m_w2w</zorder>
            <zorder>label_12</zorder>
            <zorder>m_24hChange</zorder>
            <zorder>label_7</zorder>
@@ -3017,7 +3017,7 @@ padding: 0px;</string>
             border: none;</string>
                  </property>
                  <property name="text">
-                  <string notr="true">CCX</string>
+                  <string notr="true">W2W</string>
                  </property>
                 </widget>
                </item>
@@ -3141,7 +3141,7 @@ padding: 0px;</string>
             border: none;</string>
                  </property>
                  <property name="text">
-                  <string notr="true">CCX</string>
+                  <string notr="true">W2W</string>
                  </property>
                 </widget>
                </item>
@@ -3200,7 +3200,7 @@ padding: 0px;</string>
             border: none;</string>
                  </property>
                  <property name="text">
-                  <string notr="true">CCX</string>
+                  <string notr="true">W2W</string>
                  </property>
                 </widget>
                </item>
@@ -3263,7 +3263,7 @@ padding: 0px;</string>
             border: none;</string>
                  </property>
                  <property name="text">
-                  <string notr="true">CCX</string>
+                  <string notr="true">W2W</string>
                  </property>
                 </widget>
                </item>
@@ -4960,7 +4960,7 @@ padding: 5px;</string>
                      <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
-                     <string>0.001000 CCX</string>
+                     <string>0.001000 W2W</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -5555,7 +5555,7 @@ font-size: 30px;</string>
           </widget>
          </item>
          <item row="0" column="1" colspan="2">
-          <widget class="QLabel" name="m_myConcealWalletTitle">
+          <widget class="QLabel" name="m_myW2WWalletTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -5591,7 +5591,7 @@ font-size: 30px;</string>
   		 border: none;</string>
            </property>
            <property name="text">
-            <string>CONCEAL.NETWORK</string>
+            <string>W2WCoin.org</string>
            </property>
           </widget>
          </item>
@@ -5635,7 +5635,7 @@ padding: 5px;
 QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
-            <string notr="true">Address: ccx7Qiv.......1zkdyteASK</string>
+            <string notr="true">Address: w2w7Qiv.......1zkdyteASK</string>
            </property>
            <property name="checkable">
             <bool>false</bool>
@@ -7899,7 +7899,7 @@ color: white;
 QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
-            <string>Portfolio (CCX)</string>
+            <string>Portfolio (W2W)</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -7907,7 +7907,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
           </widget>
          </item>
          <item row="4" column="4">
-          <widget class="QLabel" name="ccxTotal">
+          <widget class="QLabel" name="w2wTotal">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -7944,7 +7944,7 @@ font-size: 14px;
 QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
-            <string>CCX TOTAL</string>
+            <string>W2W TOTAL</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
